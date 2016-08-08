@@ -1,0 +1,334 @@
+2015-10-29 22:34:16,056 [Admin-akka.actor.default-dispatcher-2] INFO  akka.event.slf4j.Slf4jLogger [Slf4jLogger.scala:80] - Slf4jLogger started
+2015-10-29 22:34:16,165 [Admin-akka.actor.default-dispatcher-2] INFO  Remoting [Slf4jLogger.scala:74] - Starting remoting
+2015-10-29 22:34:16,345 [Admin-akka.actor.default-dispatcher-2] ERROR a.r.transport.netty.NettyTransport [Slf4jLogger.scala:65] - failed to bind to /192.168.10.124:2552, shutting down Netty transport
+2015-10-29 22:34:16,361 [Admin-akka.actor.default-dispatcher-2] ERROR Remoting [Slf4jLogger.scala:65] - Remoting error: [Startup failed] [
+akka.remote.RemoteTransportException: Startup failed
+	at akka.remote.Remoting.akka$remote$Remoting$$notifyError(Remoting.scala:135)
+	at akka.remote.Remoting.start(Remoting.scala:200)
+	at akka.remote.RemoteActorRefProvider.init(RemoteActorRefProvider.scala:184)
+	at akka.actor.ActorSystemImpl.liftedTree2$1(ActorSystem.scala:620)
+	at akka.actor.ActorSystemImpl._start$lzycompute(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl._start(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl.start(ActorSystem.scala:634)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:142)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:109)
+	at com.znl.AdminMainServer$.delayedEndpoint$com$znl$AdminMainServer$1(AdminMainServer.scala:11)
+	at com.znl.AdminMainServer$delayedInit$body.apply(AdminMainServer.scala:9)
+	at scala.Function0$class.apply$mcV$sp(Function0.scala:40)
+	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:35)
+	at scala.App$class.main(App.scala:76)
+	at com.znl.AdminMainServer$.main(AdminMainServer.scala:9)
+	at com.znl.AdminMainServer.main(AdminMainServer.scala)
+Caused by: org.jboss.netty.channel.ChannelException: Failed to bind to: /192.168.10.124:2552
+	at org.jboss.netty.bootstrap.ServerBootstrap.bind(ServerBootstrap.java:272)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:393)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:389)
+	at scala.util.Success$$anonfun$map$1.apply(Try.scala:236)
+	at scala.util.Try$.apply(Try.scala:191)
+	at scala.util.Success.map(Try.scala:236)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:414)
+	at sun.nio.ch.Net.bind(Net.java:406)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask.run(NioServerBoss.java:193)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.processTaskQueue(AbstractNioSelector.java:372)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:296)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:744)
+]
+2015-10-29 22:34:16,534 [Admin-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Shutting down remote daemon.
+2015-10-29 22:34:16,535 [Admin-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remote daemon shut down; proceeding with flushing remote transports.
+2015-10-29 22:34:16,535 [Admin-akka.actor.default-dispatcher-3] ERROR Remoting [Slf4jLogger.scala:65] - Remoting system has been terminated abrubtly. Attempting to shut down transports
+2015-10-29 22:34:16,536 [Admin-akka.actor.default-dispatcher-3] INFO  Remoting [Slf4jLogger.scala:74] - Remoting shut down
+2015-10-29 22:34:16,540 [Admin-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remoting shut down.
+2015-10-29 22:35:37,491 [Admin-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger [Slf4jLogger.scala:80] - Slf4jLogger started
+2015-10-29 22:35:37,550 [Admin-akka.actor.default-dispatcher-3] INFO  Remoting [Slf4jLogger.scala:74] - Starting remoting
+2015-10-29 22:35:37,725 [Admin-akka.actor.default-dispatcher-3] ERROR a.r.transport.netty.NettyTransport [Slf4jLogger.scala:65] - failed to bind to /192.168.10.124:2552, shutting down Netty transport
+2015-10-29 22:35:37,728 [Admin-akka.actor.default-dispatcher-3] ERROR Remoting [Slf4jLogger.scala:65] - Remoting error: [Startup failed] [
+akka.remote.RemoteTransportException: Startup failed
+	at akka.remote.Remoting.akka$remote$Remoting$$notifyError(Remoting.scala:135)
+	at akka.remote.Remoting.start(Remoting.scala:200)
+	at akka.remote.RemoteActorRefProvider.init(RemoteActorRefProvider.scala:184)
+	at akka.actor.ActorSystemImpl.liftedTree2$1(ActorSystem.scala:620)
+	at akka.actor.ActorSystemImpl._start$lzycompute(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl._start(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl.start(ActorSystem.scala:634)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:142)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:109)
+	at com.znl.AdminMainServer$.delayedEndpoint$com$znl$AdminMainServer$1(AdminMainServer.scala:11)
+	at com.znl.AdminMainServer$delayedInit$body.apply(AdminMainServer.scala:9)
+	at scala.Function0$class.apply$mcV$sp(Function0.scala:40)
+	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:35)
+	at scala.App$class.main(App.scala:76)
+	at com.znl.AdminMainServer$.main(AdminMainServer.scala:9)
+	at com.znl.AdminMainServer.main(AdminMainServer.scala)
+Caused by: org.jboss.netty.channel.ChannelException: Failed to bind to: /192.168.10.124:2552
+	at org.jboss.netty.bootstrap.ServerBootstrap.bind(ServerBootstrap.java:272)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:393)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:389)
+	at scala.util.Success$$anonfun$map$1.apply(Try.scala:236)
+	at scala.util.Try$.apply(Try.scala:191)
+	at scala.util.Success.map(Try.scala:236)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:414)
+	at sun.nio.ch.Net.bind(Net.java:406)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask.run(NioServerBoss.java:193)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.processTaskQueue(AbstractNioSelector.java:372)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:296)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:744)
+]
+2015-10-29 22:35:37,743 [Admin-akka.actor.default-dispatcher-2] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Shutting down remote daemon.
+2015-10-29 22:35:37,743 [Admin-akka.actor.default-dispatcher-2] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remote daemon shut down; proceeding with flushing remote transports.
+2015-10-29 22:35:37,747 [Admin-akka.actor.default-dispatcher-2] ERROR Remoting [Slf4jLogger.scala:65] - Remoting system has been terminated abrubtly. Attempting to shut down transports
+2015-10-29 22:35:37,748 [Admin-akka.actor.default-dispatcher-3] INFO  Remoting [Slf4jLogger.scala:74] - Remoting shut down
+2015-10-29 22:35:37,749 [Admin-akka.actor.default-dispatcher-4] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remoting shut down.
+2015-10-29 22:36:58,922 [Admin-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger [Slf4jLogger.scala:80] - Slf4jLogger started
+2015-10-29 22:36:58,969 [Admin-akka.actor.default-dispatcher-4] INFO  Remoting [Slf4jLogger.scala:74] - Starting remoting
+2015-10-29 22:36:59,161 [Admin-akka.actor.default-dispatcher-4] ERROR a.r.transport.netty.NettyTransport [Slf4jLogger.scala:65] - failed to bind to /192.168.10.124:2552, shutting down Netty transport
+2015-10-29 22:36:59,189 [Admin-akka.actor.default-dispatcher-2] ERROR Remoting [Slf4jLogger.scala:65] - Remoting error: [Startup failed] [
+akka.remote.RemoteTransportException: Startup failed
+	at akka.remote.Remoting.akka$remote$Remoting$$notifyError(Remoting.scala:135)
+	at akka.remote.Remoting.start(Remoting.scala:200)
+	at akka.remote.RemoteActorRefProvider.init(RemoteActorRefProvider.scala:184)
+	at akka.actor.ActorSystemImpl.liftedTree2$1(ActorSystem.scala:620)
+	at akka.actor.ActorSystemImpl._start$lzycompute(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl._start(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl.start(ActorSystem.scala:634)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:142)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:109)
+	at com.znl.AdminMainServer$.delayedEndpoint$com$znl$AdminMainServer$1(AdminMainServer.scala:11)
+	at com.znl.AdminMainServer$delayedInit$body.apply(AdminMainServer.scala:9)
+	at scala.Function0$class.apply$mcV$sp(Function0.scala:40)
+	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:35)
+	at scala.App$class.main(App.scala:76)
+	at com.znl.AdminMainServer$.main(AdminMainServer.scala:9)
+	at com.znl.AdminMainServer.main(AdminMainServer.scala)
+Caused by: org.jboss.netty.channel.ChannelException: Failed to bind to: /192.168.10.124:2552
+	at org.jboss.netty.bootstrap.ServerBootstrap.bind(ServerBootstrap.java:272)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:393)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:389)
+	at scala.util.Success$$anonfun$map$1.apply(Try.scala:236)
+	at scala.util.Try$.apply(Try.scala:191)
+	at scala.util.Success.map(Try.scala:236)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:414)
+	at sun.nio.ch.Net.bind(Net.java:406)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask.run(NioServerBoss.java:193)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.processTaskQueue(AbstractNioSelector.java:372)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:296)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:744)
+]
+2015-10-29 22:36:59,196 [Admin-akka.actor.default-dispatcher-2] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Shutting down remote daemon.
+2015-10-29 22:36:59,197 [Admin-akka.actor.default-dispatcher-2] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remote daemon shut down; proceeding with flushing remote transports.
+2015-10-29 22:36:59,201 [Admin-akka.actor.default-dispatcher-2] INFO  Remoting [Slf4jLogger.scala:74] - Remoting shut down
+2015-10-29 22:36:59,202 [Admin-akka.actor.default-dispatcher-2] ERROR Remoting [Slf4jLogger.scala:65] - Remoting system has been terminated abrubtly. Attempting to shut down transports
+2015-10-29 22:36:59,203 [Admin-akka.actor.default-dispatcher-2] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remoting shut down.
+2015-10-29 22:38:24,045 [Admin-akka.actor.default-dispatcher-6] INFO  akka.event.slf4j.Slf4jLogger [Slf4jLogger.scala:80] - Slf4jLogger started
+2015-10-29 22:38:24,089 [Admin-akka.actor.default-dispatcher-3] INFO  Remoting [Slf4jLogger.scala:74] - Starting remoting
+2015-10-29 22:38:24,295 [Admin-akka.actor.default-dispatcher-6] ERROR a.r.transport.netty.NettyTransport [Slf4jLogger.scala:65] - failed to bind to /192.168.10.124:2552, shutting down Netty transport
+2015-10-29 22:38:24,301 [Admin-akka.actor.default-dispatcher-6] ERROR Remoting [Slf4jLogger.scala:65] - Remoting error: [Startup failed] [
+akka.remote.RemoteTransportException: Startup failed
+	at akka.remote.Remoting.akka$remote$Remoting$$notifyError(Remoting.scala:135)
+	at akka.remote.Remoting.start(Remoting.scala:200)
+	at akka.remote.RemoteActorRefProvider.init(RemoteActorRefProvider.scala:184)
+	at akka.actor.ActorSystemImpl.liftedTree2$1(ActorSystem.scala:620)
+	at akka.actor.ActorSystemImpl._start$lzycompute(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl._start(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl.start(ActorSystem.scala:634)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:142)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:109)
+	at com.znl.AdminMainServer$.delayedEndpoint$com$znl$AdminMainServer$1(AdminMainServer.scala:11)
+	at com.znl.AdminMainServer$delayedInit$body.apply(AdminMainServer.scala:9)
+	at scala.Function0$class.apply$mcV$sp(Function0.scala:40)
+	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:35)
+	at scala.App$class.main(App.scala:76)
+	at com.znl.AdminMainServer$.main(AdminMainServer.scala:9)
+	at com.znl.AdminMainServer.main(AdminMainServer.scala)
+Caused by: org.jboss.netty.channel.ChannelException: Failed to bind to: /192.168.10.124:2552
+	at org.jboss.netty.bootstrap.ServerBootstrap.bind(ServerBootstrap.java:272)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:393)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:389)
+	at scala.util.Success$$anonfun$map$1.apply(Try.scala:236)
+	at scala.util.Try$.apply(Try.scala:191)
+	at scala.util.Success.map(Try.scala:236)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:414)
+	at sun.nio.ch.Net.bind(Net.java:406)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask.run(NioServerBoss.java:193)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.processTaskQueue(AbstractNioSelector.java:372)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:296)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:744)
+]
+2015-10-29 22:38:24,307 [Admin-akka.actor.default-dispatcher-4] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Shutting down remote daemon.
+2015-10-29 22:38:24,309 [Admin-akka.actor.default-dispatcher-4] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remote daemon shut down; proceeding with flushing remote transports.
+2015-10-29 22:38:24,313 [Admin-akka.actor.default-dispatcher-3] ERROR Remoting [Slf4jLogger.scala:65] - Remoting system has been terminated abrubtly. Attempting to shut down transports
+2015-10-29 22:38:24,313 [Admin-akka.actor.default-dispatcher-3] INFO  Remoting [Slf4jLogger.scala:74] - Remoting shut down
+2015-10-29 22:38:24,314 [Admin-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remoting shut down.
+2015-10-29 22:38:41,627 [Admin-akka.actor.default-dispatcher-4] INFO  akka.event.slf4j.Slf4jLogger [Slf4jLogger.scala:80] - Slf4jLogger started
+2015-10-29 22:38:41,692 [Admin-akka.actor.default-dispatcher-3] INFO  Remoting [Slf4jLogger.scala:74] - Starting remoting
+2015-10-29 22:38:41,879 [Admin-akka.actor.default-dispatcher-4] ERROR a.r.transport.netty.NettyTransport [Slf4jLogger.scala:65] - failed to bind to /192.168.10.124:2552, shutting down Netty transport
+2015-10-29 22:38:41,887 [Admin-akka.actor.default-dispatcher-4] ERROR Remoting [Slf4jLogger.scala:65] - Remoting error: [Startup failed] [
+akka.remote.RemoteTransportException: Startup failed
+	at akka.remote.Remoting.akka$remote$Remoting$$notifyError(Remoting.scala:135)
+	at akka.remote.Remoting.start(Remoting.scala:200)
+	at akka.remote.RemoteActorRefProvider.init(RemoteActorRefProvider.scala:184)
+	at akka.actor.ActorSystemImpl.liftedTree2$1(ActorSystem.scala:620)
+	at akka.actor.ActorSystemImpl._start$lzycompute(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl._start(ActorSystem.scala:617)
+	at akka.actor.ActorSystemImpl.start(ActorSystem.scala:634)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:142)
+	at akka.actor.ActorSystem$.apply(ActorSystem.scala:109)
+	at com.znl.AdminMainServer$.delayedEndpoint$com$znl$AdminMainServer$1(AdminMainServer.scala:11)
+	at com.znl.AdminMainServer$delayedInit$body.apply(AdminMainServer.scala:9)
+	at scala.Function0$class.apply$mcV$sp(Function0.scala:40)
+	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.App$$anonfun$main$1.apply(App.scala:76)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at scala.collection.generic.TraversableForwarder$class.foreach(TraversableForwarder.scala:35)
+	at scala.App$class.main(App.scala:76)
+	at com.znl.AdminMainServer$.main(AdminMainServer.scala:9)
+	at com.znl.AdminMainServer.main(AdminMainServer.scala)
+Caused by: org.jboss.netty.channel.ChannelException: Failed to bind to: /192.168.10.124:2552
+	at org.jboss.netty.bootstrap.ServerBootstrap.bind(ServerBootstrap.java:272)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:393)
+	at akka.remote.transport.netty.NettyTransport$$anonfun$listen$1.apply(NettyTransport.scala:389)
+	at scala.util.Success$$anonfun$map$1.apply(Try.scala:236)
+	at scala.util.Try$.apply(Try.scala:191)
+	at scala.util.Success.map(Try.scala:236)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:414)
+	at sun.nio.ch.Net.bind(Net.java:406)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:214)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss$RegisterTask.run(NioServerBoss.java:193)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.processTaskQueue(AbstractNioSelector.java:372)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:296)
+	at org.jboss.netty.channel.socket.nio.NioServerBoss.run(NioServerBoss.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:744)
+]
+2015-10-29 22:38:41,895 [Admin-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Shutting down remote daemon.
+2015-10-29 22:38:41,897 [Admin-akka.actor.default-dispatcher-3] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remote daemon shut down; proceeding with flushing remote transports.
+2015-10-29 22:38:41,900 [Admin-akka.actor.default-dispatcher-14] INFO  Remoting [Slf4jLogger.scala:74] - Remoting shut down
+2015-10-29 22:38:41,901 [Admin-akka.actor.default-dispatcher-14] INFO  a.r.RemoteActorRefProvider$RemotingTerminator [Slf4jLogger.scala:74] - Remoting shut down.
+2015-10-29 22:38:41,901 [Admin-akka.actor.default-dispatcher-14] ERROR Remoting [Slf4jLogger.scala:65] - Remoting system has been terminated abrubtly. Attempting to shut down transports
+2015-10-29 22:38:54,803 [Admin-akka.actor.default-dispatcher-5] INFO  akka.event.slf4j.Slf4jLogger [Slf4jLogger.scala:80] - Slf4jLogger started
+2015-10-29 22:38:54,843 [Admin-akka.actor.default-dispatcher-5] INFO  Remoting [Slf4jLogger.scala:74] - Starting remoting
+2015-10-29 22:38:55,154 [Admin-akka.actor.default-dispatcher-5] INFO  Remoting [Slf4jLogger.scala:74] - Remoting started; listening on addresses :[akka.tcp://Admin@192.168.10.124:2552]
+2015-10-29 22:38:55,155 [Admin-akka.actor.default-dispatcher-5] INFO  Remoting [Slf4jLogger.scala:74] - Remoting now listens on addresses: [akka.tcp://Admin@192.168.10.124:2552]

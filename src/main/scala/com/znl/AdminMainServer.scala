@@ -22,7 +22,7 @@ object AdminMainServer extends App{
 
 //  system.actorOf(Props(classOf[RobotActor]))
   val startId = 34000
-  val robotNum = 300
+  val robotNum = 1000
 
   var index = startId
   var flag = true
